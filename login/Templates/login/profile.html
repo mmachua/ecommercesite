@@ -1,0 +1,64 @@
+{% extends "base.html" %}  
+
+    { {% block head %}
+    <title>Profile</title>
+{% endblock head %}}
+ {% block body %} 
+<!--navbar with profile element tabs user authentication is necessary for security-->
+ 
+<nav class="navbar navbar-expand text-white shadow navbar " style="background-color:teal;">
+    {% if user.is_authenticated %}
+  <a class="navbar-brand text-white" href="{% url 'login:view_profile'  %}">Profile</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="container">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active text-white" href="{% url 'login:edit_profile'  %}">Edit Profile</a>
+      <a class="nav-item nav-link active text-white" href="{% url 'login:change_password'  %}">Change Password</a>
+      <a class="nav-item nav-link active text-white" href="{% url 'login:logout' %}">Logout</a>
+    </div>
+  </div>
+</div>
+  {% endif %}
+</nav>
+
+<br/>
+<div class="container">
+<!--dividing into four columns-->
+<div class="row">
+    <div class="col-md-4">
+      <div class="">
+        {% if user.userprofile.image %}
+          <img class="card-img-top" src="{{ user.userprofile.image.url  }}" class="rounded"  alt="Card image cap" style="width:20rem; height:15rem; " >
+          {% endif %}
+          <p class="card-text">
+              <span class="border-top">
+                  <p><b>username </b> : {{ user }}</p>
+                  <p><b>Last Name </b> : {{ user.last_name }}</p>
+                  <p><b>Email </b>  : {{ user.email }}</p>
+                  <p><b>Description </b>: {{ user.userprofile.description }}</p>
+                  <p><b>City </b>: {{ user.userprofile.city }}</p>
+                  <p><b>website</b>: {{ user.userprofile.website }}</p>
+              
+              </span></p>
+        </div>
+         </div>
+    <div class="col-md-4"><h4></h4>
+      </div>
+    <div class="col-md-4">Your favourite products</div>
+  </div>
+  <a href=" /admin" ><button type="button" class="btn-sm btn-secondary">login to admin</button></a>
+  
+<!--end divide-->
+</div>
+<br>
+<hr/>
+<footer class="container">
+    <p class="float-right"><a href="#">Back to top</a></p>
+    <p>&copy; Martin Machua &middot; <a href="#">Privacy</a> Comparisonn <a href="#">Terms</a></p>
+  </footer> 
+<hr/>
+
+{% endblock body %} 
