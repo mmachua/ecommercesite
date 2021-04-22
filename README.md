@@ -5,3 +5,4 @@
 2.0.7
 
 #
+![alt text](https://github.com/[mmachua]/[ecommercesite]/women/[media]/profile_image\orig.jpg?raw=true)
