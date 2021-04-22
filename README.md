@@ -5,5 +5,5 @@
 2.0.7
 
 #
-![alt text](https://github.com/[mmachua]/[ecommercesite]/women/[media]/profile_image\orig.jpg?raw=true)
-profile_image\orig.jpg
+![alt text](https://github.com/[mmachua]/[ecommercesite]ecommercesite/women/media/profile_image_2/55380402.jpg?raw=true)
+ecommercesite/women/media/profile_image_2/55380402.jpg
